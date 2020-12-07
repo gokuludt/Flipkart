@@ -56,7 +56,7 @@ public class ExcelFactory {
 		for (int i = 1; i < totalRows; i++) {
 			row = worksheet.getRow(i);
 			String actTestID = row.getCell(0).getStringCellValue();
-			if (actTestID.equalsIgnoreCase(TestID)) {
+			if (actTestID.equalsIgnoreCase(TestID)||actTestID.contains(TestID)) {
 				rowNo = i;
 				break;
 			}

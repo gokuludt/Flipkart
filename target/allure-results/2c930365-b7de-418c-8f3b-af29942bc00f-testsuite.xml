@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1607374773209" stop="1607374842829" version="1.5.4" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>Suite : FlipkartTest</name>
+    <title>Suite : FlipkartTest</title>
+    <test-cases>
+        <test-case start="1607374773279" stop="1607374842813" status="passed">
+            <name>sortProduct[TC_001-2]</name>
+            <title>To login with Flipkart and search by Product and Buy it</title>
+            <description type="text">&lt;p&gt;Step 1: Navigate to Flipkart Web application &lt;/br&gt; Step 2:Login with valid Credentials&lt;/br&gt;Step 3: Search for the Product&lt;/p&gt;Step 4: Navigate to Product details page&lt;/p&gt;Step 5: Buy the Product and confirm payment</description>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Suite"/>
+                <label name="testGroup" value="FlipkartTest"/>
+                <label name="testClass" value="executeTests.FlipkartTest"/>
+                <label name="testMethod" value="sortProduct"/>
+                <label name="testId" value="TC_001"/>
+                <label name="host" value="GokulaKrishnan"/>
+                <label name="thread" value="15528@GokulaKrishnan.PoolService-1(15)"/>
+            </labels>
+        </test-case>
+        <test-case start="1607374773280" stop="1607374816577" status="passed">
+            <name>sortProduct[TC_001-1]</name>
+            <title>To login with Flipkart and search by Product and Buy it</title>
+            <description type="text">&lt;p&gt;Step 1: Navigate to Flipkart Web application &lt;/br&gt; Step 2:Login with valid Credentials&lt;/br&gt;Step 3: Search for the Product&lt;/p&gt;Step 4: Navigate to Product details page&lt;/p&gt;Step 5: Buy the Product and confirm payment</description>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Suite"/>
+                <label name="testGroup" value="FlipkartTest"/>
+                <label name="testClass" value="executeTests.FlipkartTest"/>
+                <label name="testMethod" value="sortProduct"/>
+                <label name="testId" value="TC_001"/>
+                <label name="host" value="GokulaKrishnan"/>
+                <label name="thread" value="15528@GokulaKrishnan.PoolService-0(14)"/>
+            </labels>
+        </test-case>
+        <test-case start="1607374773281" stop="1607374839653" status="passed">
+            <name>getProductResults</name>
+            <title>To login with Flipkart and search by Product and Buy it</title>
+            <description type="text">&lt;p&gt;Step 1: Navigate to Flipkart Web application &lt;/br&gt; Step 2:Login with valid Credentials&lt;/br&gt;Step 3: Search for the Product&lt;/p&gt;Step 4: Navigate to Product details page&lt;/p&gt;Step 5: Buy the Product and confirm payment</description>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Suite"/>
+                <label name="testGroup" value="FlipkartTest"/>
+                <label name="testClass" value="executeTests.FlipkartTest"/>
+                <label name="testMethod" value="getProductResults"/>
+                <label name="testId" value="TC_002"/>
+                <label name="host" value="GokulaKrishnan"/>
+                <label name="thread" value="15528@GokulaKrishnan.pool-1-thread-2(13)"/>
+            </labels>
+        </test-case>
+        <test-case start="1607374773279" stop="1607374842813" status="passed">
+            <name>sortProduct[TC_001-2]</name>
+            <title>To login with Flipkart and search by Product and Buy it</title>
+            <description type="text">&lt;p&gt;Step 1: Navigate to Flipkart Web application &lt;/br&gt; Step 2:Login with valid Credentials&lt;/br&gt;Step 3: Search for the Product&lt;/p&gt;Step 4: Navigate to Product details page&lt;/p&gt;Step 5: Buy the Product and confirm payment</description>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Suite"/>
+                <label name="testGroup" value="FlipkartTest"/>
+                <label name="testClass" value="executeTests.FlipkartTest"/>
+                <label name="testMethod" value="sortProduct"/>
+                <label name="testId" value="TC_001"/>
+                <label name="host" value="GokulaKrishnan"/>
+                <label name="thread" value="15528@GokulaKrishnan.PoolService-1(15)"/>
+            </labels>
+        </test-case>
+        <test-case start="1607374773280" stop="1607374816577" status="passed">
+            <name>sortProduct[TC_001-1]</name>
+            <title>To login with Flipkart and search by Product and Buy it</title>
+            <description type="text">&lt;p&gt;Step 1: Navigate to Flipkart Web application &lt;/br&gt; Step 2:Login with valid Credentials&lt;/br&gt;Step 3: Search for the Product&lt;/p&gt;Step 4: Navigate to Product details page&lt;/p&gt;Step 5: Buy the Product and confirm payment</description>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Suite"/>
+                <label name="testGroup" value="FlipkartTest"/>
+                <label name="testClass" value="executeTests.FlipkartTest"/>
+                <label name="testMethod" value="sortProduct"/>
+                <label name="testId" value="TC_001"/>
+                <label name="host" value="GokulaKrishnan"/>
+                <label name="thread" value="15528@GokulaKrishnan.PoolService-0(14)"/>
+            </labels>
+        </test-case>
+        <test-case start="1607374773281" stop="1607374839653" status="passed">
+            <name>getProductResults</name>
+            <title>To login with Flipkart and search by Product and Buy it</title>
+            <description type="text">&lt;p&gt;Step 1: Navigate to Flipkart Web application &lt;/br&gt; Step 2:Login with valid Credentials&lt;/br&gt;Step 3: Search for the Product&lt;/p&gt;Step 4: Navigate to Product details page&lt;/p&gt;Step 5: Buy the Product and confirm payment</description>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Suite"/>
+                <label name="testGroup" value="FlipkartTest"/>
+                <label name="testClass" value="executeTests.FlipkartTest"/>
+                <label name="testMethod" value="getProductResults"/>
+                <label name="testId" value="TC_002"/>
+                <label name="host" value="GokulaKrishnan"/>
+                <label name="thread" value="15528@GokulaKrishnan.pool-1-thread-2(13)"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="TestNG"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>

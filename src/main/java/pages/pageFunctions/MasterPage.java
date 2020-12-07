@@ -20,14 +20,14 @@ import pages.pageElements.Master;
  *
  */
 public class MasterPage extends ReusableLibrary implements Master {
+	DriverFactory driverProperty = new DriverFactory();
+	ExcelFactory excelSheet = new ExcelFactory();
+	String sheetName = driverProperty.getProperty("TestCaseData");
+	String url, userName, password, productName;
 
 	public MasterPage(WebDriver driver) {
 		super(driver);
 	}
-
-	DriverFactory driverProperty = new DriverFactory();
-	ExcelFactory excelSheet = new ExcelFactory();
-	String sheetName = driverProperty.getProperty("TestCaseData");
 
 	public void initializeExcel(String sheetName) {
 		excelSheet.loadExcelsheet(sheetName);
@@ -35,7 +35,7 @@ public class MasterPage extends ReusableLibrary implements Master {
 	}
 
 	public void launchApplication() {
-		String url = driverProperty.getProperty("ApplicationUrl");
+		url = driverProperty.getProperty("ApplicationUrl");
 		getApplication(url);
 		if (IsObjectPresent(LOGO)) {
 			updateTestLog(true, "Home Page Loaded Successfully");
@@ -43,11 +43,10 @@ public class MasterPage extends ReusableLibrary implements Master {
 	}
 
 	public void loginIntoApplication() {
-		String userName = driverProperty.getProperty("EmailOrMobileNo");
-		String password = driverProperty.getProperty("Password");
+		userName = driverProperty.getProperty("EmailOrMobileNo");
+		password = driverProperty.getProperty("Password");
 
 		login(userName, password);
-		waitForAjax(3);
 		if (IsObjectPresent(LOGIN_ERROR)) {
 			updateTestLog(false, "You are not registered with us. Please sign up.");
 		}
@@ -58,38 +57,40 @@ public class MasterPage extends ReusableLibrary implements Master {
 
 	public void searchByProductName(String testId, String product) {
 		initializeExcel("TestCaseData");
-		String productName = excelSheet.getData(testId, sheetName, product);
+		productName = excelSheet.getData(testId, sheetName, product);
+		if (IsObjectPresent(LOGIN_CLOSE)) {
+			clickElement(LOGIN_CLOSE, "Login Close Button");
+		}
 		if (IsObjectPresent(SEARCH_TEXT)) {
-			waitForAjax(5);
+			clickElement(SEARCH_TEXT, "Search Button");
 			enterText(SEARCH_TEXT, productName);
 			waitForAjax(1);
 			clickElement(SEARCH_BTN, "Search Button");
-			waitForAjax(10);
+			waitForAjax(7);
 			waitForObject(10, SEARCH_CONFIRM);
 			if (IsObjectPresent(SEARCH_CONFIRM)) {
 				String searchTxt = driver.findElement(SEARCH_CONFIRM).getText();
-				productName=productName.toLowerCase();
+				this.productName = productName.toLowerCase();
 				if (searchTxt.contains(productName)) {
 					updateTestLog(true, "Product Search is Successfull");
 				} else if (IsObjectPresent(SEARCH_RECONFIRM)) {
 					String searchReTxt = driver.findElement(SEARCH_RECONFIRM).getText();
 					if (searchReTxt.contains(productName)) {
-						updateTestLog(true, "Product Search is Successfull");
+						updateTestLog(true, "Product Search '" + productName + "' is Successfull");
 					} else {
-						updateTestLog(false, "Product Search is not Successfull");
+						updateTestLog(false, "Product Search '" + productName + "' is not Successfull");
 					}
 				}
 			} else {
-				updateTestLog(false, "Product Search is not Successfull");
+				updateTestLog(false, "Product Search '" + productName + "' is not Successfull");
 			}
 		} else {
-			updateTestLog(false, "Product Search is not Successfull");
+			updateTestLog(false, "Product Search '" + productName + "' is not Successfull");
 		}
 	}
 
 	public void sortProductResults() {
 		clickElement(PRODUCT_SORT, "High to Low Sort");
-		waitForAjax(3);
 		/*
 		 * clickElement(PRODUCT_FILTER, "Availability Filter"); waitForObject(5,
 		 * PRODUCT_FILTER_BYSTOCK); moveToElement(NEED_HELP);
@@ -101,7 +102,7 @@ public class MasterPage extends ReusableLibrary implements Master {
 
 	public String getProductResults() {
 		String selectedProduct = null;
-
+		waitForAjax(3);
 		if (IsObjectPresent(PRODUCT_NAME)) {
 			List<String> productName = getTextValues(PRODUCT_NAME);
 			List<String> productPrice = getTextValues(PRODUCT_PRICE);
@@ -112,29 +113,19 @@ public class MasterPage extends ReusableLibrary implements Master {
 
 				count++;
 			}
-			int priceValue = 0;
-			int productPriceIdx = 0;
-			int productIdx = -1;
-			List<WebElement> priceList = driver.findElements(PRODUCT_PRICE);
-			for (WebElement element : priceList) {
-				productIdx++;
-				String value = element.getText().trim();
-				value = value.replace("?", "");
-				value = value.replace("₹", "");
-				value = value.replace(",", "");
-				int priceAmount = Integer.parseInt(value);
-
-				if (priceValue > priceAmount) {
-					productPriceIdx++;
-				}
-				priceValue = priceAmount;
-				if (productPriceIdx == 3) {
-					element.click();
-					selectedProduct = productName.get(productIdx);
-					updateTestLog(true, "Product view detail page is Successfully loaded");
-					break;
-				}
-			}
+			/*
+			 * int priceValue = 0; int productPriceIdx = 0; int productIdx = -1;
+			 * List<WebElement> priceList = driver.findElements(PRODUCT_PRICE); for
+			 * (WebElement element : priceList) { productIdx++; String value =
+			 * element.getText().trim(); value = value.replace("?", ""); value =
+			 * value.replace("₹", ""); value = value.replace(",", ""); int priceAmount =
+			 * Integer.parseInt(value);
+			 * 
+			 * if (priceValue > priceAmount) { productPriceIdx++; } priceValue =
+			 * priceAmount; if (productPriceIdx == 3) { element.click(); selectedProduct =
+			 * productName.get(productIdx); updateTestLog(true,
+			 * "Product view detail page is Successfully loaded"); break; } }
+			 */
 		} else {
 			updateTestLog(false, "Product Result is not Successfull");
 		}
@@ -144,17 +135,13 @@ public class MasterPage extends ReusableLibrary implements Master {
 	public void buyProduct(String ProductName) {
 		// waitForWindowAndSwitch(ProductName);
 		waitForWindowAndSwitch("Online at Best Price On Flipkart");
-		waitForAjax(3);
 		waitForObject(2, PRODUCT_BYNOW);
 		clickElement(PRODUCT_BYNOW, "Buy Product");
-		waitForAjax(10);
 		waitForObject(2, PRODUCT_CART_DETAILS);
 		if (IsObjectPresent(PRODUCT_CART_DETAILS)) {
 			clickElement(PRODUCT_DELIVER, "Deliver Here");
-			waitForAjax(1);
 			waitForObject(2, ORDER_CONFIRMATION);
 			clickElement(ORDER_CONTINUE, "Payment Continue");
-			waitForAjax(2);
 			updateTestLog(true, "Product Cart detail page is Successfully loaded");
 		} else {
 			updateTestLog(false, "Product Cart detail page is not Successfully loaded");

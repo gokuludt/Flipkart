@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Suite">
-                    <span>E:\eclipse-workspace\flipkart\testng.xml</span>
+                    <span>C:\Users\Administrator\git\Flipkart\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -90,7 +90,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -101,7 +101,17 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="executeTests.FlipkartTest" hash-for-method="searchProduct(org.testng.TestRunner@50378a4)">searchProduct(org.testng.TestRunner@50378a4)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="executeTests.FlipkartTest" hash-for-method="getProductResults">getProductResults</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="executeTests.FlipkartTest" hash-for-method="sortProduct(TC_001-2)">sortProduct(TC_001-2)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="executeTests.FlipkartTest" hash-for-method="sortProduct(TC_001-1)">sortProduct(TC_001-1)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -124,10 +134,25 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="searchProduct(org.testng.TestRunner@50378a4)">
-                  </a> <!-- searchProduct(org.testng.TestRunner@50378a4) -->
-                  <span class="method-name">searchProduct</span>
-                  <span class="parameters">(org.testng.TestRunner@50378a4)</span>
+                  <a name="getProductResults">
+                  </a> <!-- getProductResults -->
+                  <span class="method-name">getProductResults</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="sortProduct(TC_001-2)">
+                  </a> <!-- sortProduct(TC_001-2) -->
+                  <span class="method-name">sortProduct</span>
+                  <span class="parameters">(TC_001-2)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="sortProduct(TC_001-1)">
+                  </a> <!-- sortProduct(TC_001-1) -->
+                  <span class="method-name">sortProduct</span>
+                  <span class="parameters">(TC_001-1)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -135,18 +160,19 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">E:\eclipse-workspace\flipkart\testng.xml</span>
+            <span class="header-content">C:\Users\Administrator\git\Flipkart\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite name=&quot;Suite&quot;&gt;
+&lt;suite thread-count=&quot;2&quot; verbose=&quot;2&quot; name=&quot;Suite&quot; parallel=&quot;methods&quot; data-provider-thread-count=&quot;2&quot;&gt;
   &lt;test name=&quot;FlipkartTest&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;executeTests.FlipkartTest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;searchProduct&quot;/&gt;
+          &lt;include name=&quot;sortProduct&quot;/&gt;
+          &lt;include name=&quot;getProductResults&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- executeTests.FlipkartTest --&gt;
     &lt;/classes&gt;
@@ -188,16 +214,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'searchProduct')
+data.setCell(0, 1, 'sortProduct')
 data.setCell(0, 2, 'executeTests.FlipkartTest')
-data.setCell(0, 3, 105680);
+data.setCell(0, 3, 69565);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'getProductResults')
+data.setCell(1, 2, 'executeTests.FlipkartTest')
+data.setCell(1, 3, 66413);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'sortProduct')
+data.setCell(2, 2, 'executeTests.FlipkartTest')
+data.setCell(2, 3, 43329);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -209,45 +243,82 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="reporter-method-div">
-              <span class="reporter-method-name">searchProduct(org.testng.TestRunner@50378a4)</span>
+              <span class="reporter-method-name">sortProduct(TC_001-2)</span>
               <div class="reporter-method-output-div">
+                <span class="reporter-method-output">Chrome Browser launched</span>
                 <span class="reporter-method-output">Application url opened in the browser</span>
                 <span class="reporter-method-output">Home Page Loaded Successfully</span>
-                <span class="reporter-method-output">Login is clicked in the webpage</span>
-                <span class="reporter-method-output">Able to login into the Application</span>
-                <span class="reporter-method-output">Honor is populated in Product</span>
+                <span class="reporter-method-output">Redmi is populated in Product</span>
+                <span class="reporter-method-output">Login Close Button is clicked in the webpage</span>
                 <span class="reporter-method-output">Search Button is clicked in the webpage</span>
-                <span class="reporter-method-output">Product Search is Successfull</span>
+                <span class="reporter-method-output">Search Button is clicked in the webpage</span>
                 <span class="reporter-method-output">High to Low Sort is clicked in the webpage</span>
-                <span class="reporter-method-output">Prodct Name: "Nexus 6P Special Edition (Gold, 64 GB)" Product Price: ?42,998</span>
-                <span class="reporter-method-output">Prodct Name: "Huawei P9 (Prestige Gold, 32 GB)" Product Price: ?39,999</span>
-                <span class="reporter-method-output">Prodct Name: "Huawei P9 (Mystic Silver, 32 GB)" Product Price: ?39,999</span>
-                <span class="reporter-method-output">Prodct Name: "Huawei P9 (Titanium Grey, 32 GB)" Product Price: ?39,999</span>
-                <span class="reporter-method-output">Prodct Name: "Honor 8" Product Price: ?29,999</span>
-                <span class="reporter-method-output">Prodct Name: "Honor 8" Product Price: ?29,999</span>
-                <span class="reporter-method-output">Prodct Name: "Honor 8" Product Price: ?29,999</span>
-                <span class="reporter-method-output">Prodct Name: "Honor 6 Plus (Black, 32 GB)" Product Price: ?26,499</span>
-                <span class="reporter-method-output">Prodct Name: "Honor Play (Midnight Black, 64 GB)" Product Price: ?25,999</span>
-                <span class="reporter-method-output">Prodct Name: "Honor 20 (Midnight Black, 128 GB)" Product Price: ?22,999</span>
-                <span class="reporter-method-output">Prodct Name: "Honor 20 (Sapphire Blue, 128 GB)" Product Price: ?22,999</span>
-                <span class="reporter-method-output">Prodct Name: "Huawei Nova 3i (Black, 128 GB)" Product Price: ?21,999</span>
-                <span class="reporter-method-output">Prodct Name: "Honor 9i (Prestige Gold, 64 GB)" Product Price: ?19,999</span>
-                <span class="reporter-method-output">Prodct Name: "Honor 9i (Aurora Blue, 64 GB)" Product Price: ?19,999</span>
-                <span class="reporter-method-output">Prodct Name: "Honor 9N (Midnight Black, 128 GB)" Product Price: ?19,999</span>
-                <span class="reporter-method-output">Prodct Name: "Honor 9N (Sapphire Blue, 128 GB)" Product Price: ?19,999</span>
-                <span class="reporter-method-output">Prodct Name: "Honor 8X (Blue, 64 GB)" Product Price: ?19,999</span>
-                <span class="reporter-method-output">Prodct Name: "Honor 9X (Midnight Black, 128 GB)" Product Price: ?16,999</span>
-                <span class="reporter-method-output">Prodct Name: "Honor 9X (Sapphire Blue, 128 GB)" Product Price: ?16,999</span>
-                <span class="reporter-method-output">Prodct Name: "Honor 8 Lite (Black, 64 GB)" Product Price: ?16,900</span>
-                <span class="reporter-method-output">Prodct Name: "Huawei Y9 Prime 2019 (Emerald Green, 128 GB)" Product Price: ?15,999</span>
-                <span class="reporter-method-output">Prodct Name: "Huawei Y9 Prime 2019 (Sapphire Blue, 128 GB)" Product Price: ?15,999</span>
-                <span class="reporter-method-output">Prodct Name: "Honor 9N (Midnight Black, 64 GB)" Product Price: ?15,999</span>
-                <span class="reporter-method-output">Prodct Name: "Honor 9N (Sapphire Blue, 64 GB)" Product Price: ?15,999</span>
-                <span class="reporter-method-output">Product view detail page is Successfully loaded</span>
-                <span class="reporter-method-output">Buy Product is clicked in the webpage</span>
-                <span class="reporter-method-output">Deliver Here is clicked in the webpage</span>
-                <span class="reporter-method-output">Payment Continue is clicked in the webpage</span>
-                <span class="reporter-method-output">Product Cart detail page is Successfully loaded</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">getProductResults</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">Chrome Browser launched</span>
+                <span class="reporter-method-output">Application url opened in the browser</span>
+                <span class="reporter-method-output">Home Page Loaded Successfully</span>
+                <span class="reporter-method-output">Sony is populated in Product</span>
+                <span class="reporter-method-output">Login Close Button is clicked in the webpage</span>
+                <span class="reporter-method-output">Search Button is clicked in the webpage</span>
+                <span class="reporter-method-output">Search Button is clicked in the webpage</span>
+                <span class="reporter-method-output">High to Low Sort is clicked in the webpage</span>
+                <span class="reporter-method-output">Prodct Name: "Black, Stereo Channel" Product Price: ?67,990</span>
+                <span class="reporter-method-output">Prodct Name: "Black, 2.0 Channel" Product Price: ?42,990</span>
+                <span class="reporter-method-output">Prodct Name: "Black, Stereo Channel" Product Price: ?41,247</span>
+                <span class="reporter-method-output">Prodct Name: "Black, 3.1 Channel" Product Price: ?39,990</span>
+                <span class="reporter-method-output">Prodct Name: "White, Pink, In the Ear" Product Price: ?37,653</span>
+                <span class="reporter-method-output">Prodct Name: "Blue, On the Ear" Product Price: ?36,369</span>
+                <span class="reporter-method-output">Prodct Name: "Green, On the Ear" Product Price: ?34,178</span>
+                <span class="reporter-method-output">Prodct Name: "Black" Product Price: ?1,45,999</span>
+                <span class="reporter-method-output">Prodct Name: "Black" Product Price: ?1,34,999</span>
+                <span class="reporter-method-output">Prodct Name: "Black" Product Price: ?1,03,799</span>
+                <span class="reporter-method-output">Prodct Name: "Black" Product Price: ?1,02,490</span>
+                <span class="reporter-method-output">Prodct Name: "KD-65A8F" Product Price: ?2,59,999</span>
+                <span class="reporter-method-output">Prodct Name: "KD-65A8G" Product Price: ?2,32,490</span>
+                <span class="reporter-method-output">Prodct Name: "English, Hardcover, unknown" Product Price: ?83,016</span>
+                <span class="reporter-method-output">Prodct Name: "Black, In the Ear" Product Price: ?33,740</span>
+                <span class="reporter-method-output">Prodct Name: "Brown, Mono Channel" Product Price: ?33,700</span>
+                <span class="reporter-method-output">Prodct Name: "Black, 5.1 Channel" Product Price: ?31,999</span>
+                <span class="reporter-method-output">Prodct Name: "Black, 5.1 Channel" Product Price: ?31,990</span>
+                <span class="reporter-method-output">Prodct Name: "Black, 2.1 Channel" Product Price: ?30,999</span>
+                <span class="reporter-method-output">Prodct Name: "Black, 2.0 Channel" Product Price: ?29,990</span>
+                <span class="reporter-method-output">Prodct Name: "Silver, On the Ear" Product Price: ?28,990</span>
+                <span class="reporter-method-output">Prodct Name: "20.1 MP, 8x Optical Zoom, 4x Maximum (32x Combined Zoom) Digital Zoom, Black" Product Price: ?84,999</span>
+                <span class="reporter-method-output">Prodct Name: "Black" Product Price: ?79,999</span>
+                <span class="reporter-method-output">Prodct Name: "Black, For PS4" Product Price: ?48,788</span>
+                <span class="reporter-method-output">Prodct Name: "20.1 MP, 2.9 Optical Zoom, 44x Digital Zoom, Black" Product Price: ?44,999</span>
+                <span class="reporter-method-output">Prodct Name: "KD-55A8G" Product Price: ?1,69,999</span>
+                <span class="reporter-method-output">Prodct Name: "KD-65X8000H" Product Price: ?1,27,450</span>
+                <span class="reporter-method-output">Prodct Name: "English, Hardcover, unknown" Product Price: ?74,635</span>
+                <span class="reporter-method-output">Prodct Name: "Black, 5.1 Channel" Product Price: ?22,990</span>
+                <span class="reporter-method-output">Prodct Name: "Black, In the Ear" Product Price: ?21,990</span>
+                <span class="reporter-method-output">Prodct Name: "Black, On the Ear" Product Price: ?19,990</span>
+                <span class="reporter-method-output">Prodct Name: "Black, 5.1 Channel" Product Price: ?19,990</span>
+                <span class="reporter-method-output">Prodct Name: "Black, 2.0 Channel" Product Price: ?19,990</span>
+                <span class="reporter-method-output">Prodct Name: "Black, True Wireless" Product Price: ?19,990</span>
+                <span class="reporter-method-output">Prodct Name: "Black, 3.1 Channel" Product Price: ?19,990</span>
+                <span class="reporter-method-output">Prodct Name: "Black" Product Price: ?43,990</span>
+                <span class="reporter-method-output">Prodct Name: "Black" Product Price: ?43,190</span>
+                <span class="reporter-method-output">Prodct Name: "Black, For PS4" Product Price: ?39,999</span>
+                <span class="reporter-method-output">Prodct Name: "Black" Product Price: ?39,990</span>
+                <span class="reporter-method-output">Prodct Name: "KD-55X9500G" Product Price: ?1,11,590</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">sortProduct(TC_001-1)</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">Chrome Browser launched</span>
+                <span class="reporter-method-output">Application url opened in the browser</span>
+                <span class="reporter-method-output">Home Page Loaded Successfully</span>
+                <span class="reporter-method-output">Honor is populated in Product</span>
+                <span class="reporter-method-output">Login Close Button is clicked in the webpage</span>
+                <span class="reporter-method-output">Search Button is clicked in the webpage</span>
+                <span class="reporter-method-output">Search Button is clicked in the webpage</span>
+                <span class="reporter-method-output">High to Low Sort is clicked in the webpage</span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -266,18 +337,18 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">executeTests.FlipkartTest</div> <!-- chronological-class-name -->
-              <div class="configuration-test before">
-                <span class="method-name">beforeTest</span>
-                <span class="method-start">0 ms</span>
-              </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">searchProduct(org.testng.TestRunner@50378a4)</span>
-                <span class="method-start">3552 ms</span>
+                <span class="method-name">getProductResults</span>
+                <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-test after">
-                <span class="method-name">afterTest</span>
-                <span class="method-start">109238 ms</span>
-              </div> <!-- configuration-test after -->
+              <div class="test-method">
+                <span class="method-name">sortProduct(TC_001-1)</span>
+                <span class="method-start">7 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">sortProduct(TC_001-2)</span>
+                <span class="method-start">8 ms</span>
+              </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

@@ -33,12 +33,12 @@ import pages.pageElements.Master;
  */
 public class ReusableLibrary implements Master {
 
-	public static WebDriver driver;
+	public WebDriver driver;
 	public Properties prop;
 	public FileInputStream fin;
 	
 	public ReusableLibrary(WebDriver driver) {
-		ReusableLibrary.driver = driver;
+		this.driver=driver;
 	}
 
 	public void enterText(By field, String value) {
@@ -192,11 +192,12 @@ public class ReusableLibrary implements Master {
 
 	public void waitForObject(int time, By strobj) {
 		try {
+			System.out.println("Wait for Object Started");
 			WebDriverWait currWait = new WebDriverWait(driver, time);
 			currWait.until(ExpectedConditions.invisibilityOfElementLocated(strobj));
 			System.out.println("Wait for Object completed");
 		} catch (Exception e) {
-			System.out.println("Wait for Object not complete");
+			System.out.println("Wait for Object not completed");
 			e.getLocalizedMessage();
 		}
 	}
