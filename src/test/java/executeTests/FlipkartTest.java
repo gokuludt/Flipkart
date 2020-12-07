@@ -29,10 +29,9 @@ public class FlipkartTest {
 	}
 
 	@TestCaseId("TC_001")
-	@Title("To login with Flipkart and search by Product and Buy it")
-	@Description("<p>Step 1: Navigate to Flipkart Web application </br> Step 2:Login with valid Credentials</br>"
-			+ "Step 3: Search for the Product</p>" + "Step 4: Navigate to Product details page</p>"
-			+ "Step 5: Buy the Product and confirm payment")
+	@Title("To search by Product in Flipkart and sort")
+	@Description("<p>Step 1: Navigate to Flipkart Web application </br>" + "Step 2: Search for the Product</p>"
+			+ "Step 3: Sort to Product details page</p>")
 	@Test(dataProvider = "testcount")
 	public void sortProduct(String testCaseName) {
 		WebDriver driver;
@@ -49,10 +48,9 @@ public class FlipkartTest {
 	}
 
 	@TestCaseId("TC_002")
-	@Title("To login with Flipkart and search by Product and Buy it")
-	@Description("<p>Step 1: Navigate to Flipkart Web application </br> Step 2:Login with valid Credentials</br>"
-			+ "Step 3: Search for the Product</p>" + "Step 4: Navigate to Product details page</p>"
-			+ "Step 5: Buy the Product and confirm payment")
+	@Title("To search by Product in Flipkart and get the result")
+	@Description("<p>Step 1: Navigate to Flipkart Web application </br>" + "Step 2: Search for the Product</p>"
+			+ "Step 3: Navigate to Product details page</p>" + "Step 4: Get the Result set")
 	@Test()
 	public void getProductResults() {
 		WebDriver driver;
@@ -62,7 +60,6 @@ public class FlipkartTest {
 			MasterPage mp = new MasterPage(driver);
 			mp.launchApplication();
 			mp.searchByProductName("TC_002", "Product");
-			mp.sortProductResults();
 			mp.getProductResults();
 		} finally {
 			driver.quit();
